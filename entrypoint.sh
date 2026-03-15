@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 npm i @node-minify/cli -g
-npm i @node-minify/uglify-es -g
+npm i @node-minify/terser -g
 npm i @node-minify/clean-css -g
 npm i @node-minify/html-minifier -g
 
@@ -16,7 +16,7 @@ echo "HTML options set to $INPUT_HTML_OPTIONS"
 if [[ $INPUT_COMPRESS == *"js"* ]]; then
     find ./_site/. -type f -iname \*.js | while read fname
         do
-        node-minify --input ${fname} --compressor uglify-es --output ${fname} --option "$INPUT_JS_OPTIONS"
+        node-minify --input ${fname} --compressor terser --output ${fname} --option "$INPUT_JS_OPTIONS"
         done
 fi
 

@@ -12,7 +12,7 @@ inputs:
     required: false
     default: js,css,html
   js_options:
-    description: 'JS compressor options. See https://github.com/mishoo/UglifyJS for the full list.'
+    description: 'JS compressor options. See https://github.com/terser/terser for the full list.'
     required: false
     default: '{"mangle": false}'
   css_options:
